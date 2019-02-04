@@ -60,37 +60,37 @@ class DockerClient(object):
         try:
             self.__source_registry = options.source_registry
         except Exception as e:
-            print("Error getting source_registry for docker promotion params {}".format(e), exc_info=True)
+            print("Error getting source_registry for docker promotion params {}".format(e))
             raise
  
         try:
             self.__source_registry_username = options.source_registry_username
         except Exception as e:
-            print("Error getting source_registry_username docker promotion params {}".format(e), exc_info=True)
+            print("Error getting source_registry_username docker promotion params {}".format(e))
             raise
  
         try:
             self.__source_registry_password = options.source_registry_password
         except Exception as e:
-            print("Error getting source_registry_password docker promotion params {}".format(e), exc_info=True)
+            print("Error getting source_registry_password docker promotion params {}".format(e))
             raise
  
         try:
             self.__target_registry = options.target_registry
         except Exception as e:
-            print("Error getting target_registry docker promotion params {}".format(e), exc_info=True)
+            print("Error getting target_registry docker promotion params {}".format(e))
             raise
  
         try:
             self.__target_registry_username = options.target_registry_username
         except Exception as e:
-            print("Error getting target_registry_username docker promotion params {}".format(e), exc_info=True)
+            print("Error getting target_registry_username docker promotion params {}".format(e))
             raise
  
         try:
             self.__target_registry_password = options.target_registry_password
         except Exception as e:
-            print("Error getting target_registry_password docker promotion params {}".format(e), exc_info=True)
+            print("Error getting target_registry_password docker promotion params {}".format(e))
             raise
  
 if __name__ == "__main__":
@@ -108,9 +108,9 @@ if __name__ == "__main__":
         docker_client = DockerClient()
         docker_client.login(username, password, source_registry)
         docker_client.pull_image(source_registry, image_name)
-        docker_client.push_image(image_name, target_auth_config, target_registry)
+        # docker_client.push_image(image_name, target_auth_config, target_registry)
         # print("all images {}".format(docker_client.get_client().images.list()))
     except errors.APIError as e:
-        print("{}".format(e), exc_info=True)
+        print("{}".format(e))
         raise
  
