@@ -110,7 +110,7 @@ if __name__ == "__main__":
         docker_client = DockerClient()
         docker_client.login(username, password, source_registry)
         docker_client.pull_image(source_registry, image_name)
-        docker_client.push_image(image_name, target_auth_config, source_registry, target_registry)
+        docker_client.push_image(image_name, target_auth_config, target_registry)
         # logging.info("all images {}".format(docker_client.get_client().images.list()))
     except errors.APIError as e:
         logging.error("{}".format(e), exc_info=True)
