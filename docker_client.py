@@ -94,11 +94,11 @@ class DockerClient(object):
             raise
  
 if __name__ == "__main__":
-    username = 'analytics_dev_01'
-    password = 'analytics_dev_01'
-    source_registry = 'buildregistry.na03.bhge.com'
-    target_registry = 'registryqa.na03.bhge.com'
-    image_name = 'add_nums:latest'
+    username = 'user' # update with correct username
+    password = 'pass' # update with correct password
+    source_registry = 'test-registry1.com' # update with correct source registry
+    target_registry = 'test-registry2.com' # update with correct target registry
+    image_name = 'add_nums:latest' # image name
 
     target_auth_config = {
         'username': username,
